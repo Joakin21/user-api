@@ -18,7 +18,7 @@ class MeController extends Controller
         $user = Http::get('https://6071de2050aaea001728541f.mockapi.io/users/'.$user_to_show);
         return $user;
     }
-    
+
     public function update(Request $request)
     {
         $user_to_update = $request["user_id"];
@@ -33,6 +33,14 @@ class MeController extends Controller
             ]
         );
         return response()->json(['message' => 'User updated successfully']);
+    }
+
+    public function delete(Request $request)
+    {
+        $user_to_delete = $request["user_id"];
+        Http::delete('https://6071de2050aaea001728541f.mockapi.io/users/'.$user_to_delete."/");
+        return response()->json(['message' => 'User deleted successfully']);
+        
     }
 
 
