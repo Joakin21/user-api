@@ -1,0 +1,1182 @@
+{
+	"info": {
+		"_postman_id": "09d6f390-440f-4d83-b720-c31d56ddea28",
+		"name": "API REST Users",
+		"description": "Servicio para gestionar perfil de usuarios.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/login",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cfd3bb6b19ef141fd68d27189a3ae77f4e4309dc",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"carlos@gmail.com\",\r\n    \"password\":\"carlos12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "<h3>Descripción</h3>\r\nServicio que retorna un token de autenticación dado unas credenciales de acceso (email y password) en el cuerpo de la petición.\r\nSi las credenciales de acceso son correctas, el servicio retornará un token que posteriormente sirvirá para que el usuario pueda gestionar su información.\r\n\r\n<h3> Estados de retorno </h3>\r\n\r\n1. Cuando las credenciales de acceso son correctas:<br>\r\n{\r\n    \"token\": \"c7a5f1b280a663d65f5d587b0071a919\"\r\n}\r\n\r\n2. Cuando las credenciales de acceso son incorrectas:<br>\r\n{\r\n    \"error\": \"Unauthorized\"\r\n}"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "cfd3bb6b19ef141fd68d27189a3ae77f4e4309dc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"karloz@gmail.com\",\r\n    \"password\":\"carlos12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 20:04:41 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 20:04:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Unauthorized\"\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "cfd3bb6b19ef141fd68d27189a3ae77f4e4309dc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"carlos@gmail.com\",\r\n    \"password\": \"carlos12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"token\":\"c7a5f1b280a663d65f5d587b0071a919\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "cfd3bb6b19ef141fd68d27189a3ae77f4e4309dc",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"name\": \"Matilda\",\r\n    \"email\": \"matilda@gmail.com\",\r\n    \"password\": \"matilda12345\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/new",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"new"
+					]
+				},
+				"description": "<h3>Descripción</h3>\r\nServicio que se encarga de registrar una nueva cuenta en la base de datos en microservicio.\r\n<h3>Retorno una vez enviada la petición:</h3>\r\nSe retornan los atributos email y name del nuevo usuario registrado \r\n<h3>Ejemplo de retorno:</h3>\r\n<p>\r\n{\r\n    \"data\":{\r\n        \"name\":\"Javiera\",\r\n        \"email\":\"javiera@gmail.com\"\r\n    }\r\n}\r\n</p>"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/new",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "cfd3bb6b19ef141fd68d27189a3ae77f4e4309dc"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\":\"Roxana\",\r\n    \"email\":\"roxana@gmail.com\",\r\n    \"password\":\"roxana12345\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/new",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"new"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"name\": \"Roxana\",\n        \"email\": \"roxana@gmail.com\"\n    }\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/new",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "cfd3bb6b19ef141fd68d27189a3ae77f4e4309dc"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"Matias\",\r\n    \"email\": \"matias@gmail.com\",\r\n    \"password\": \"matias12345\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/new",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"new"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"data\": {\r\n        \"name\": \"Matias\",\r\n        \"email\": \"matias@gmail.com\"\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/me",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "baf7e4b767053299417c227585149dcd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cfd3bb6b19ef141fd68d27189a3ae77f4e4309dc",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me"
+					]
+				},
+				"description": "<h3>Descripción</h3>\r\nServicio que realiza petición GET para obtner un usuario determinado dado un token de autorización enviado en la cabecera de la petición.\r\n<h3>Estados de retorno</h3>\r\n<ul>\r\n<li>\r\n1. Si el token enviado pertenece al usuario:<br>\r\n{\r\n    \"id\":\"id de usuario\",\r\n    \"name\":\"nombre de usuario\",\r\n    \"email\":\"email de usuario\"\r\n    \"password\":\"contraseña de usuario encriptada\"\r\n    \"token\": \"token asignado\"\r\n}\r\n</li>\r\n<li>\r\n2. Si el token ingresado es incorrecto:\r\n{\r\n    \"error\":\"Invalid token\"\r\n}\r\n</li>\r\n<li>\r\n3. Si no se ingresa un token en la cabecera de la petición:\r\n{\r\n    \"error\":\"Token not found\"\r\n}\r\n</li>\r\n</ul>"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token baf7e4b767053299417c227585149dcd",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:29:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:29:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"error\":\"Token not found\"\r\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token gfaf7e4b7670d53299417c227585149dcd",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:29:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:29:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"error\":\"Invalid token\"\r\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token baf7e4b767053299417c227585149dcd",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 20:53:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 20:53:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"3\",\"name\":\"Isabella\",\"email\":\"isabella@gmail.com\",\"password\":\"$2y$10$86hDe74BhgibliJmrq8QIe8Uq0ayxS7Hz59Ekxt2/2vosOLpun.v6\",\"token\":\"baf7e4b767053299417c227585149dcd\"}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/me",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token ad81ecce2fc972f4f1865ee185f451a8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Florencia\",\r\n    \"email\": \"florencia@gmail.com\",\r\n    \"password\": \"florencia12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me"
+					]
+				},
+				"description": "<h3>Descripción</h3>\r\nServicio que realiza petición PUT para actualizar un usuario determinado dado un token de autorización enviado en la cabecera de la petición. \r\nAparte del token, se debe enviar en el cuerpo de la petición un JSON con los atributos name, email y password a actualizar.\r\n<h3>Estados de retorno</h3>\r\n<ul>\r\n<li>\r\n1. Si el token enviado pertenece al usuario:<br>\r\n{\r\n    \"message\":\"User updated successfully\"\r\n}\r\n</li>\r\n<li>\r\n2. Si el token ingresado es incorrecto:\r\n{\r\n    \"error\":\"Invalid token\"\r\n}\r\n</li>\r\n<li>\r\n3. Si no se ingresa un token en la cabecera de la petición:\r\n{\r\n    \"error\":\"Token not found\"\r\n}\r\n</li>\r\n</ul>"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token ad81ecce2fc972f4f1865ee185f451a8",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Florencia\",\r\n    \"email\": \"florencia@gmail.com\",\r\n    \"password\": \"florencia12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:45:28 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:45:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Token not found\"\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token as81ecce2fc972f4f1865ee185f451a8d",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Florencia\",\r\n    \"email\": \"florencia@gmail.com\",\r\n    \"password\": \"florencia12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:45:28 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:45:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid token\"\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token ad81ecce2fc972f4f1865ee185f451a8",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Florencia\",\r\n    \"email\": \"florencia@gmail.com\",\r\n    \"password\": \"florencia12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:45:28 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Apr 2021 21:45:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/me",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token d3f2630698bdf51111ec196f3347cabb",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me"
+					]
+				},
+				"description": "<h3>Descripción</h3>\r\nServicio que realiza petición DELETE para eliminar un usuario determinado dado un token de autorización enviado en la cabecera de la petición. \r\n<h3>Estados de retorno</h3>\r\n<ul>\r\n<li>\r\n1. Si el token enviado pertenece al usuario:<br>\r\n{\r\n    \"message\":\"User deleted successfully\"\r\n}\r\n</li>\r\n<li>\r\n2. Si el token ingresado es incorrecto:\r\n{\r\n    \"error\":\"Invalid token\"\r\n}\r\n</li>\r\n<li>\r\n3. Si no se ingresa un token en la cabecera de la petición:\r\n{\r\n    \"error\":\"Token not found\"\r\n}\r\n</li>\r\n</ul>"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token d3f2630698bdf51111ec196f3347cabb",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"error\": \"Token not found\"\r\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token h3f2633df56jf51fdsfdec196f3347cabb",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"error\":\"Invalid token\"\r\n}"
+				},
+				{
+					"name": "http://127.0.0.1:8000/api/me",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token d3f2630698bdf51111ec196f3347cabb",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"message\":\"User deleted successfully\"\r\n}"
+				}
+			]
+		}
+	]
+}
